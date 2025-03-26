@@ -42,8 +42,8 @@
           wget
           curl
           fastfetch
-        ])
-        ++ (with pkgs.lua52Packages; [
+        ]);
+        extraLuaPackages = (ps: with ps; [
           cjson
           luautf8
         ]);
