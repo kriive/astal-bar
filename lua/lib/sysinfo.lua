@@ -118,9 +118,9 @@ local function parse_fastfetch_data(raw_data)
 				local uptime = nil
 
 				if type(item.result.uptime) == "number" then
-					uptime = item.result.uptime
+					uptime = item.result.uptime / 1000
 				elseif type(item.result.uptime) == "string" then
-					uptime = tonumber(item.result.uptime)
+					uptime = tonumber(item.result.uptime) / 1000
 				elseif item.result.seconds then
 					uptime = tonumber(item.result.seconds)
 				end
